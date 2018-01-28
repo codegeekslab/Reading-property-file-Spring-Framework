@@ -1,0 +1,23 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="BasicPhone" class="com.codegeekslab.type.BasicPhone" />
+	<bean id="SmartPhone" class="com.codegeekslab.type.SmartPhone" />
+
+	<bean id="CallingApp" class="com.codegeekslab.app.CallingApp">
+		<constructor-arg ref="SmartPhone" />
+		<constructor-arg value="${number}" />
+		<constructor-arg value="${appname}" />
+	</bean>
+	<bean id="PropertyBean"
+		class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
+		<property name="location">
+			<value>classpath:details.properties</value>
+		</property>
+		<property name="ignoreResourceNotFound" value="true" />
+		<property name="ignoreUnresolvablePlaceholders" value="true" />
+	</bean>
+
+</beans>
