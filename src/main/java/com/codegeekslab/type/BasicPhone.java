@@ -1,10 +1,10 @@
 package com.codegeekslab.type;
 
-import com.codegeekslab.device.Phone;
+import com.codegeekslab.device.CellPhone;
 
-public class BasicPhone implements Phone {
+public class BasicPhone implements CellPhone {
 
-	public void openApp(int number, String app) {
+	public void makeCall(int number, String app) {
 		System.out.println("calling via " + app + " " + number);
 	}
 

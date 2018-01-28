@@ -7,10 +7,11 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 	<bean id="SmartPhone" class="com.codegeekslab.type.SmartPhone" />
 
 	<bean id="CallingApp" class="com.codegeekslab.app.CallingApp">
-		<constructor-arg ref="SmartPhone" />
-		<constructor-arg value="${number}" />
-		<constructor-arg value="${appname}" />
+	<property name="phone" ref="SmartPhone"></property>
+	<property name="number" value="${number}"></property>
+	<property name="app" value="${appname}"></property>
 	</bean>
+	
 	<bean id="PropertyBean"
 		class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
 		<property name="location">

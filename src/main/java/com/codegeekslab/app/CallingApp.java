@@ -1,28 +1,21 @@
 package com.codegeekslab.app;
 
-import com.codegeekslab.device.Phone;
+import com.codegeekslab.device.CellPhone;
 
 public class CallingApp {
 
-	private Phone phone;
+	private CellPhone phone;
 
 	private int number;
 
 	private String app;
 
-	public CallingApp(Phone phone, int number, String app) {
-		super();
-		this.phone = phone;
-		this.number = number;
-		this.app = app;
-	}
-
 	// for setter injection
-	public void setPhone(Phone phone) {
+	public void setPhone(CellPhone phone) {
 		this.phone = phone;
 	}
 
-	public Phone getPhone() {
+	public CellPhone getPhone() {
 		return phone;
 	}
 
@@ -42,8 +35,8 @@ public class CallingApp {
 		this.app = app;
 	}
 
-	public void makeCall() {
-		phone.openApp(number, app);
+	public void dialNumber() {
+		phone.makeCall(number, app);
 	}
 
 }
